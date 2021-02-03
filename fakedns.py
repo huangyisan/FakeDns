@@ -217,7 +217,7 @@ class A(DNSResponse):
         super(A, self).__init__(query)
         self.type = b"\x00\x01"
         self.length = b"\x00\x04"
-        self.data = self.get_ip(record)
+        self.data = self.get_ip(record).encode('latin')
 
     @staticmethod
     def get_ip(dns_record):
